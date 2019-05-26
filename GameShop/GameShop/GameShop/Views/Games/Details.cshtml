@@ -1,0 +1,15 @@
+﻿@model GameShop.Models.Game
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>@Model.Category.Name</li>
+    <li>@Model.ReleaseDate.ToLongDateString()</li>
+    <li>@Model.AddDate.ToLongDateString()</li>
+    <li>@Model.NumberInStock</li>
+
+</ul>
+

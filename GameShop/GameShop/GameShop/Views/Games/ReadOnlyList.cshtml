@@ -1,0 +1,42 @@
+﻿@model IEnumerable<GameShop.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+<table id="movies" class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Cateogry</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#games").DataTable({
+                ajax: {
+                    url: "/api/games",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                    },
+                    {
+                        data: "category.name"
+                    }
+                ]
+            });
+
+        });
+    </script>
+}
+
